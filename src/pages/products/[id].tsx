@@ -51,9 +51,9 @@ const productData = {
       "Finish options: Powder coating (60–80 microns) and anodizing",
     ],
     images: [
-      "/images/products/Casement-1.jpg",
-      "/images/products/Casement-2.jpg",
-      "/images/products/Casement-3.jpg",
+      "/images/products/Casement-1.png",
+      "/images/products/Casement-2.png",
+      "/images/products/Casement-3.png",
       "/images/products/Casement-Door-4.jpg",
       "/images/products/Casement-Door-5.jpg",
     ],
@@ -123,8 +123,8 @@ const productData = {
     ],
     images: [
       "/images/products/Casement-Door-5.jpg",
-      "/images/products/Casement-2.jpg",
-      "/images/products/Casement-1.jpg",
+      "/images/products/Casement-2.png",
+      "/images/products/Casement-1.png",
     ],
   },
   custom: {

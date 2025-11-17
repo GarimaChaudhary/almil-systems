@@ -37,7 +37,7 @@ const products = [
     id: "custom",
     name: "Customised Solutions",
     tagline: "Bespoke systems crafted for you",
-    image: "/images/products/Casement-1.jpg",
+    image: "/images/products/Casement-1.png",
   },
 ];
 

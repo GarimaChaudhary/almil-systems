@@ -13,7 +13,7 @@ const products = [
     id: "casement",
     name: "Casement Windows & Doors",
     description: "Timeless design meets robust performance",
-    image: "/images/products/Casement-1.jpg",
+    image: "/images/products/Casement-1.png",
   },
   {
     id: "lift-slide",
@@ -37,7 +37,7 @@ const products = [
     id: "custom",
     name: "Customised Solutions",
     description: "Bespoke systems crafted for your vision",
-    image: "/images/products/Casement-3.jpg",
+    image: "/images/products/Casement-3.png",
   },
 ];
 
