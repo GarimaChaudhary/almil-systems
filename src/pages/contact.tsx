@@ -431,7 +431,7 @@ export default function ContactUs() {
                   Call Now
                 </motion.a>
                 <motion.a
-                  href="mailto:info@almilsystems.in"
+                  href="mailto:info@almil.org"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300"

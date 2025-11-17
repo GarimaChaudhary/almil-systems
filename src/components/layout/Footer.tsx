@@ -188,10 +188,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:info@almilsystems.in"
+                  href="mailto:info@almil.org"
                   className="hover:text-white transition-colors"
                 >
-                  info@almilsystems.in
+                  info@almil.org
                 </a>
               </li>
             </ul>
