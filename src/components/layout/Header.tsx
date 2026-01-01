@@ -92,10 +92,10 @@ export default function Header() {
                     className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative group ${
                       isActive
                         ? needsSolidBg
-                          ? "text-[#D97642]"
+                          ? "text-[#FDB913]"
                           : "text-white"
                         : needsSolidBg
-                        ? "text-[#2D3142] hover:text-[#D97642]"
+                        ? "text-[#2D3142] hover:text-[#FDB913]"
                         : "text-white/90 hover:text-white"
                     }`}
                   >
@@ -104,7 +104,7 @@ export default function Header() {
                     {/* Animated Underline */}
                     <motion.span
                       className={`absolute -bottom-1 left-0 h-0.5 ${
-                        needsSolidBg ? "bg-[#D97642]" : "bg-white"
+                        needsSolidBg ? "bg-[#FDB913]" : "bg-white"
                       }`}
                       initial={{ width: isActive ? "100%" : "0%" }}
                       whileHover={{ width: "100%" }}
@@ -127,7 +127,7 @@ export default function Header() {
                 href="/contact"
                 className={`group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 overflow-hidden ${
                   needsSolidBg
-                    ? "bg-[#D97642] text-white shadow-lg shadow-[#D97642]/30"
+                    ? "bg-[#FDB913] text-white shadow-lg shadow-[#D97642]/30"
                     : "bg-white text-[#1A2332] shadow-xl"
                 }`}
               >
@@ -246,8 +246,8 @@ export default function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block text-base font-semibold py-4 px-4 rounded-lg transition-all duration-300 ${
                         router.pathname === item.href
-                          ? "bg-[#F7F3ED] text-[#D97642] shadow-sm"
-                          : "text-[#2D3142] hover:bg-[#F7F3ED]"
+                          ? "bg-gray-50 text-[#FDB913] shadow-sm"
+                          : "text-[#2D3142] hover:bg-gray-50"
                       }`}
                     >
                       {item.name}
@@ -265,7 +265,7 @@ export default function Header() {
                   <Link
                     href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 px-6 py-4 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 shadow-lg"
+                    className="flex items-center justify-center gap-2 px-6 py-4 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold transition-all duration-300 shadow-lg"
                   >
                     GET QUOTE
                     <svg

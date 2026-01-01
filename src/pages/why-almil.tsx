@@ -58,7 +58,7 @@ function AnimatedCounter({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, type: "spring" }}
-      className="text-5xl md:text-6xl font-bold text-[#D97642]"
+      className="text-5xl md:text-6xl font-bold text-[#FDB913]"
     >
       {end}
       {suffix}
@@ -127,7 +127,7 @@ function ProcessStepCard({
         <motion.div
           whileHover={{ rotate: 360, scale: 1.1 }}
           transition={{ duration: 0.6 }}
-          className="w-20 h-20 mx-auto bg-gradient-to-br from-[#D97642] to-[#C9A96E] rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-2xl mb-6 relative z-10"
+          className="w-20 h-20 mx-auto bg-gradient-to-br from-[#D97642] to-[#FDB913] rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-2xl mb-6 relative z-10"
           style={{
             transform: "translateZ(40px)",
           }}
@@ -137,7 +137,7 @@ function ProcessStepCard({
 
         {/* Number */}
         <div
-          className="text-5xl font-bold text-[#D97642] mb-3 text-center"
+          className="text-5xl font-bold text-[#FDB913] mb-3 text-center"
           style={{
             transform: "translateZ(30px)",
           }}
@@ -177,7 +177,7 @@ function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D97642] to-[#C9A96E] origin-left z-50"
+      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D97642] to-[#FDB913] origin-left z-50"
     />
   );
 }
@@ -231,7 +231,7 @@ export default function WhyAlmil() {
             {[...Array(5)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute rounded-full bg-gradient-to-br from-[#D97642]/20 to-[#C9A96E]/20 blur-3xl"
+                className="absolute rounded-full bg-gradient-to-br from-[#D97642]/20 to-[#FDB913]/20 blur-3xl"
                 style={{
                   width: Math.random() * 300 + 200,
                   height: Math.random() * 300 + 200,
@@ -301,7 +301,7 @@ export default function WhyAlmil() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="inline-block px-5 py-2 bg-gradient-to-r from-[#D97642] to-[#C9A96E] text-white rounded-full text-sm font-semibold mb-6"
+                className="inline-block px-5 py-2 bg-gradient-to-r from-[#D97642] to-[#FDB913] text-white rounded-full text-sm font-semibold mb-6"
               >
                 Our Process
               </motion.div>
@@ -385,14 +385,14 @@ export default function WhyAlmil() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="w-32 h-1 bg-gradient-to-r from-[#D97642] to-[#C9A96E] mx-auto rounded-full"
+                className="w-32 h-1 bg-gradient-to-r from-[#D97642] to-[#FDB913] mx-auto rounded-full"
               />
             </motion.div>
           </div>
         </section>
 
         {/* Stats Banner */}
-        <section className="py-20 bg-gradient-to-r from-[#D97642] to-[#C9A96E]">
+        <section className="py-20 bg-gradient-to-r from-[#D97642] to-[#FDB913]">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -442,7 +442,7 @@ export default function WhyAlmil() {
                   boxShadow: "0 20px 40px rgba(217, 118, 66, 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold text-lg transition-all duration-300"
               >
                 Get Started Today
                 <motion.svg

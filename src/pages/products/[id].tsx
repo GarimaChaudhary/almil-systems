@@ -181,7 +181,7 @@ export default function ProductDetail() {
           </h1>
           <Link
             href="/products"
-            className="text-[#D97642] hover:text-[#C9A96E] font-semibold"
+            className="text-[#FDB913] hover:text-[#C9A96E] font-semibold"
           >
             Back to Products
           </Link>
@@ -288,7 +288,7 @@ export default function ProductDetail() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-[#D97642] font-semibold">
+              <span className="text-[#FDB913] font-semibold">
                 {product.name}
               </span>
             </motion.div>
@@ -367,7 +367,7 @@ export default function ProductDetail() {
               >
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#D97642] to-[#C9A96E] text-white rounded-xl font-semibold text-base overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#D97642] to-[#FDB913] text-white rounded-xl font-semibold text-base overflow-hidden"
                 >
                   {/* Animated shimmer */}
                   <motion.div
@@ -464,7 +464,7 @@ export default function ProductDetail() {
                     className="group relative bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-8 transition-all duration-300 hover:bg-white/15 cursor-pointer overflow-hidden"
                   >
                     {/* Hover glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D97642]/20 to-[#C9A96E]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#D97642]/20 to-[#FDB913]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div className="relative z-10">
                       <motion.div
@@ -478,7 +478,7 @@ export default function ProductDetail() {
                       >
                         {stat.icon}
                       </motion.div>
-                      <div className="text-4xl font-bold text-[#D97642] mb-2">
+                      <div className="text-4xl font-bold text-[#FDB913] mb-2">
                         {stat.value}
                       </div>
                       <div className="text-sm text-white/80 font-medium">
@@ -591,7 +591,7 @@ export default function ProductDetail() {
                     {activeTab === tab.key && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute inset-0 bg-gradient-to-r from-[#D97642] to-[#C9A96E] rounded-xl shadow-lg"
+                        className="absolute inset-0 bg-gradient-to-r from-[#D97642] to-[#FDB913] rounded-xl shadow-lg"
                         transition={{
                           type: "spring",
                           stiffness: 500,
@@ -622,7 +622,7 @@ export default function ProductDetail() {
                     </p>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D97642] to-[#C9A96E] text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D97642] to-[#FDB913] text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                     >
                       Get a Quote
                       <svg
@@ -666,7 +666,7 @@ export default function ProductDetail() {
                             repeat: Infinity,
                             repeatDelay: 3,
                           }}
-                          className="w-2 h-2 bg-gradient-to-br from-[#D97642] to-[#C9A96E] rounded-full mt-2 flex-shrink-0"
+                          className="w-2 h-2 bg-gradient-to-br from-[#D97642] to-[#FDB913] rounded-full mt-2 flex-shrink-0"
                         />
                         <p className="text-gray-700 leading-relaxed">
                           {advantage}
@@ -700,7 +700,7 @@ export default function ProductDetail() {
                             repeat: Infinity,
                             ease: "linear",
                           }}
-                          className="w-2 h-2 bg-gradient-to-br from-[#D97642] to-[#C9A96E] rounded-full mt-2 flex-shrink-0"
+                          className="w-2 h-2 bg-gradient-to-br from-[#D97642] to-[#FDB913] rounded-full mt-2 flex-shrink-0"
                         />
                         <p className="text-gray-700 leading-relaxed">{spec}</p>
                       </motion.div>

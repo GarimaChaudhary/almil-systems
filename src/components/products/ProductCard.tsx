@@ -62,19 +62,19 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
 
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className="text-[#1A2332] font-semibold hover:text-[#D97642] mb-4"
+          className="text-[#1A2332] font-semibold hover:text-[#FDB913] mb-4"
         >
           {showDetails ? "Hide" : "View"} Details
         </button>
 
         {showDetails && (
-          <div className="bg-[#F7F3ED] p-4 rounded-md mb-4 border-l-4 border-[#1A2332]">
+          <div className="bg-gray-50 p-4 rounded-md mb-4 border-l-4 border-[#1A2332]">
             <h4 className="font-semibold mb-3">Key Features</h4>
             <ul className="space-y-2">
               {product.features.map((feature, index) => (
                 <li key={index} className="flex items-start text-sm">
                   <svg
-                    className="w-4 h-4 text-[#D97642] mr-2 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 text-[#FDB913] mr-2 flex-shrink-0 mt-0.5"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -91,7 +91,7 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
           </div>
         )}
 
-        <button className="w-full bg-[#1A2332] text-white py-3 rounded-md hover:bg-[#D97642] transition-colors font-semibold">
+        <button className="w-full bg-[#1A2332] text-white py-3 rounded-md hover:bg-[#FDB913] transition-colors font-semibold">
           Learn More
         </button>
       </div>

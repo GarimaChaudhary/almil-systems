@@ -72,7 +72,7 @@ function AnimatedCounter({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, type: "spring" }}
-      className="text-5xl md:text-6xl font-bold text-[#D97642]"
+      className="text-5xl md:text-6xl font-bold text-[#FDB913]"
     >
       {end}
       {suffix}
@@ -229,7 +229,7 @@ export default function About() {
                       transition={{ delay: idx * 0.1 + 0.3 }}
                       className="flex items-center gap-3"
                     >
-                      <div className="w-12 h-12 rounded-full bg-[#F7F3ED] flex items-center justify-center text-2xl flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-2xl flex-shrink-0">
                         {item.icon}
                       </div>
                       <span className="text-lg font-semibold text-[#1A2332]">
@@ -319,7 +319,7 @@ export default function About() {
         </section>
 
         {/* Values */}
-        <section className="py-24 md:py-32 bg-[#F7F3ED]">
+        <section className="py-24 md:py-32 bg-gray-50">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -416,7 +416,7 @@ export default function About() {
         </section>
 
         {/* Stats Banner */}
-        <section className="py-20 bg-gradient-to-r from-[#D97642] to-[#C9A96E]">
+        <section className="py-20 bg-gradient-to-r from-[#D97642] to-[#FDB913]">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -461,7 +461,7 @@ export default function About() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold text-lg transition-all duration-300"
               >
                 Get in Touch
                 <svg

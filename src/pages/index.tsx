@@ -135,7 +135,7 @@ export default function Home() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#FDB913] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Explore Products
                 <svg
@@ -207,7 +207,7 @@ export default function Home() {
             className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hidden lg:block"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-[#D97642] rounded-xl flex items-center justify-center text-white text-2xl">
+              <div className="w-14 h-14 bg-[#FDB913] rounded-xl flex items-center justify-center text-white text-2xl">
                 ⭐
               </div>
               <div>
@@ -342,7 +342,7 @@ export default function Home() {
                     </div>
 
                     {/* Hover Arrow */}
-                    <div className="absolute top-6 right-6 w-12 h-12 bg-[#D97642] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute top-6 right-6 w-12 h-12 bg-[#FDB913] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="none"
@@ -371,7 +371,7 @@ export default function Home() {
           >
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#FDB913] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300"
             >
               View All Products
               <svg
@@ -450,7 +450,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 text-lg"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 text-lg"
               >
                 Contact Us Now
                 <svg

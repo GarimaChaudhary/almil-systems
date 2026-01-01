@@ -56,36 +56,6 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <Image
-                src="/images/logo/Almil_Logo_05-3_Final.jpg"
-                alt="Almil Systems"
-                width={160}
-                height={54}
-                className="h-14 w-auto brightness-0 invert"
-              />
-            </Link>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Global Aluminium Systems, Now in India. Premium windows and doors
-              designed and engineered in the United States.
-            </p>
-            <div className="flex items-center gap-4">
-              {social.map((item) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-white/10 hover:bg-[#D97642] rounded-lg flex items-center justify-center transition-colors duration-300"
-                  aria-label={item.name}
-                >
-                  {item.icon}
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
           {/* Products */}
           <div>
             <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">Products</h3>
@@ -120,15 +90,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Offices */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">
-              Contact Us
-            </h3>
+            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">Offices</h3>
             <ul className="space-y-4 text-sm text-gray-400">
+              {/* USA Office */}
               <li className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-[#D97642] flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-[#FDB913] flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -146,15 +115,91 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>
-                  N 286, New Atish Market
-                  <br />
-                  Jaipur, Rajasthan 302020
-                </span>
+                <div>
+                  <p className="font-semibold text-white mb-1">USA Office</p>
+                  <span>
+                    90 Stonewall Pl, New York,
+                    <br />
+                    NY 10014 (USA)
+                  </span>
+                </div>
               </li>
+
+              {/* Jaipur Office */}
+              <li className="flex items-start gap-3">
+                <svg
+                  className="w-5 h-5 text-[#FDB913] flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <p className="font-semibold text-white mb-1">
+                    Glass & Glazing Works
+                  </p>
+                  <span>
+                    P-108, Kharakua, Narsingh Chowk,
+                    <br />
+                    Vatika, Jaipur – 303905 (Rajasthan)
+                  </span>
+                </div>
+              </li>
+
+              {/* Dubai Office */}
+              <li className="flex items-start gap-3">
+                <svg
+                  className="w-5 h-5 text-[#FDB913] flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <p className="font-semibold text-white mb-1">Dubai Office</p>
+                  <span>
+                    F804, Le Presidium,
+                    <br />
+                    Silicon Oasis, Dubai
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div>
+            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">
+              Contact Us
+            </h3>
+            <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-[#D97642] flex-shrink-0"
+                  className="w-5 h-5 text-[#FDB913] flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -175,7 +220,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-[#D97642] flex-shrink-0"
+                  className="w-5 h-5 text-[#FDB913] flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -195,6 +240,21 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4 mt-6">
+              {social.map((item) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="w-10 h-10 bg-white/10 hover:bg-[#FDB913] rounded-lg flex items-center justify-center transition-colors duration-300"
+                  aria-label={item.name}
+                >
+                  {item.icon}
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

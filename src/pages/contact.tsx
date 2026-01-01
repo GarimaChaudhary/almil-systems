@@ -162,7 +162,7 @@ export default function ContactUs() {
         </section>
 
         {/* Contact Info Cards */}
-        <section className="py-24 bg-[#F7F3ED]">
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {contactInfo.map((info, idx) => (
@@ -312,7 +312,7 @@ export default function ContactUs() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-5 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-xl font-semibold text-lg shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-xl font-semibold text-lg shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -362,7 +362,7 @@ export default function ContactUs() {
         </section>
 
         {/* Map Section with Jaipur Location */}
-        <section className="py-24 bg-[#F7F3ED]">
+        <section className="py-24 bg-gray-50">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -419,7 +419,7 @@ export default function ContactUs() {
                   href="tel:+919024268374"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-10 py-5 bg-[#D97642] hover:bg-[#C9A96E] text-white rounded-lg font-semibold text-lg transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold text-lg transition-all duration-300"
                 >
                   <svg
                     className="w-5 h-5"
