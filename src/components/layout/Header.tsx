@@ -26,9 +26,7 @@ export default function Header() {
   const router = useRouter();
   const { scrollY } = useScroll();
 
-  // Check if we're on a product detail page (light background)
   const isProductDetail = router.pathname.startsWith("/products/");
-  const needsSolidBg = scrolled || isProductDetail;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -52,16 +50,14 @@ export default function Header() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        needsSolidBg
-          ? "bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-200/50"
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        scrolled ? "shadow-md" : "shadow-sm"
       }`}
     >
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo with Hover Effect */}
-          <Link href="/" className="flex items-center group">
+          {/* Logo - Bigger */}
+          <Link href="/" className="flex items-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -70,15 +66,15 @@ export default function Header() {
               <Image
                 src="/images/logo.jpg"
                 alt="Almil Systems"
-                width={140}
-                height={48}
-                className="h-12 w-auto transition-all duration-300"
+                width={200}
+                height={65}
+                className="h-14 w-auto object-contain"
                 priority
               />
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation with Magnetic Effect */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navigation.map((item, index) => {
               const isActive = router.pathname === item.href;
@@ -91,22 +87,16 @@ export default function Header() {
                     transition={{ delay: index * 0.05 }}
                     className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative group ${
                       isActive
-                        ? needsSolidBg
-                          ? "text-[#FDB913]"
-                          : "text-white"
-                        : needsSolidBg
-                        ? "text-[#2D3142] hover:text-[#FDB913]"
-                        : "text-white/90 hover:text-white"
+                        ? "text-[#FDB913]"
+                        : "text-[#2D3142] hover:text-[#FDB913]"
                     }`}
                   >
                     {item.name}
 
-                    {/* Animated Underline */}
+                    {/* Fixed Animated Underline - Reactive to pathname changes */}
                     <motion.span
-                      className={`absolute -bottom-1 left-0 h-0.5 ${
-                        needsSolidBg ? "bg-[#FDB913]" : "bg-white"
-                      }`}
-                      initial={{ width: isActive ? "100%" : "0%" }}
+                      className="absolute -bottom-1 left-0 h-0.5 bg-[#FDB913]"
+                      animate={{ width: isActive ? "100%" : "0%" }}
                       whileHover={{ width: "100%" }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     />
@@ -116,7 +106,7 @@ export default function Header() {
             })}
           </div>
 
-          {/* CTA Button with Shimmer Effect */}
+          {/* CTA Button */}
           <div className="hidden lg:block">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -125,13 +115,8 @@ export default function Header() {
             >
               <Link
                 href="/contact"
-                className={`group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 overflow-hidden ${
-                  needsSolidBg
-                    ? "bg-[#FDB913] text-white shadow-lg shadow-[#D97642]/30"
-                    : "bg-white text-[#1A2332] shadow-xl"
-                }`}
+                className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 overflow-hidden bg-[#FDB913] text-white shadow-lg shadow-[#FDB913]/30 hover:shadow-[#FDB913]/50 hover:bg-[#E5A50A]"
               >
-                {/* Shimmer Effect */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                   initial={{ x: "-100%" }}
@@ -162,7 +147,7 @@ export default function Header() {
             </motion.div>
           </div>
 
-          {/* Mobile menu button with Animation */}
+          {/* Mobile menu button */}
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -173,15 +158,12 @@ export default function Header() {
               animate={mobileMenuOpen ? "open" : "closed"}
               className="w-6 h-6 relative"
             >
-              {/* Hamburger to X animation */}
               <motion.span
                 variants={{
                   closed: { rotate: 0, y: 0 },
                   open: { rotate: 45, y: 6 },
                 }}
-                className={`absolute left-0 top-1 w-6 h-0.5 ${
-                  needsSolidBg ? "bg-[#1A2332]" : "bg-white"
-                } transition-colors`}
+                className="absolute left-0 top-1 w-6 h-0.5 bg-[#1A2332] transition-colors"
                 style={{ transformOrigin: "center" }}
               />
               <motion.span
@@ -189,18 +171,14 @@ export default function Header() {
                   closed: { opacity: 1 },
                   open: { opacity: 0 },
                 }}
-                className={`absolute left-0 top-[11px] w-6 h-0.5 ${
-                  needsSolidBg ? "bg-[#1A2332]" : "bg-white"
-                } transition-colors`}
+                className="absolute left-0 top-[11px] w-6 h-0.5 bg-[#1A2332] transition-colors"
               />
               <motion.span
                 variants={{
                   closed: { rotate: 0, y: 0 },
                   open: { rotate: -45, y: -6 },
                 }}
-                className={`absolute left-0 top-[21px] w-6 h-0.5 ${
-                  needsSolidBg ? "bg-[#1A2332]" : "bg-white"
-                } transition-colors`}
+                className="absolute left-0 top-[21px] w-6 h-0.5 bg-[#1A2332] transition-colors"
                 style={{ transformOrigin: "center" }}
               />
             </motion.div>
@@ -208,7 +186,7 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu with Stagger Animation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -216,7 +194,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-2xl"
+            className="lg:hidden bg-white border-t border-gray-100 shadow-2xl"
           >
             <div className="container mx-auto px-6 py-6">
               <motion.div

@@ -25,7 +25,7 @@ export default function Hero() {
         <p className="text-xl md:text-2xl mb-4">Welcome to Almil Systems</p>
 
         <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-          For more than 15 years, Almil Systems has been a trusted global name
+          For more than 30 Years, Almil Systems has been a trusted global name
           in premium aluminium windows and doors systems, designed and
           engineered in the United States.
         </p>

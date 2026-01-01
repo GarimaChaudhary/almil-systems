@@ -120,7 +120,7 @@ export default function Home() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed"
             >
-              For over 15 years,{" "}
+              For over 30 Years,{" "}
               <span className="font-semibold text-white">Almil Systems</span>{" "}
               has been a trusted global brand in premium aluminium windows and
               doors, designed and engineered in the United States.
