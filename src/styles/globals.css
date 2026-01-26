@@ -5,9 +5,10 @@
   --color-alumil-dark: #3E4346;
   --color-alumil-gray: #F5F5F5;
   --color-alumil-white: #FFFFFF;
-  
+
   --radius-sm: 4px;
-  --radius-md: 4px; /* Aligning md with sm for that sharp industrial look */
+  --radius-md: 4px;
+  /* Aligning md with sm for that sharp industrial look */
   --radius-lg: 6px;
   --radius-xl: 8px;
 }
@@ -18,6 +19,7 @@
   }
 
   body {
-    @apply font-sans antialiased text-alumil-dark bg-white;
+    font-family: "Outfit", sans-serif;
+    @apply antialiased text-alumil-dark bg-white;
   }
 }

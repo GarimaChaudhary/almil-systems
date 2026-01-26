@@ -56,26 +56,35 @@ export default function Header() {
     >
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Bigger */}
+          {/* Logo - More Prominent */}
+          {/* Logo - Sophisticated Shimmer Effect */}
           <Link href="/" className="flex items-center">
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="relative overflow-hidden group"
+              whileHover="hover"
             >
               <Image
                 src="/images/logo.jpg"
                 alt="Almil Systems"
-                width={200}
-                height={65}
-                className="h-14 w-auto object-contain"
+                width={230}
+                height={70}
+                className="h-[70px] w-auto object-contain relative z-10"
                 priority
+              />
+              {/* Shimmer Overlay - Stronger Effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent -skew-x-12 z-20"
+                variants={{
+                  hover: { x: ["-100%", "200%"] }
+                }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                initial={{ x: "-100%" }}
               />
             </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navigation.map((item, index) => {
               const isActive = router.pathname === item.href;
 
@@ -85,9 +94,9 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative group ${isActive
-                        ? "text-alumil-yellow"
-                        : "text-alumil-dark hover:text-alumil-yellow"
+                    className={`text-base font-bold tracking-wider transition-colors duration-300 relative group ${isActive
+                      ? "text-alumil-yellow"
+                      : "text-alumil-dark hover:text-alumil-yellow"
                       }`}
                   >
                     {item.name}
@@ -222,8 +231,8 @@ export default function Header() {
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block text-base font-semibold py-4 px-4 rounded-lg transition-all duration-300 ${router.pathname === item.href
-                          ? "bg-alumil-gray text-alumil-yellow shadow-sm"
-                          : "text-alumil-dark hover:bg-alumil-gray"
+                        ? "bg-alumil-gray text-alumil-yellow shadow-sm"
+                        : "text-alumil-dark hover:bg-alumil-gray"
                         }`}
                     >
                       {item.name}

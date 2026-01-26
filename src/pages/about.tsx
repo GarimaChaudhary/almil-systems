@@ -24,7 +24,7 @@ const values = [
     title: "Innovation",
     description:
       "Constantly evolving with the latest technology and design trends",
-    stat: "15+",
+    stat: "30+",
     label: "Years Experience",
   },
   {
@@ -128,7 +128,7 @@ export default function About() {
         <title>About Us | Almil Systems India</title>
         <meta
           name="description"
-          content="Learn about Almil Systems - 15+ years of excellence in premium aluminium windows and doors, now in India."
+          content="Learn about Almil Systems - 30+ years of excellence in premium aluminium windows and doors, now in India."
         />
       </Head>
 
@@ -196,7 +196,7 @@ export default function About() {
                 About Almil Systems
               </motion.div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                15+ Years of Global Excellence,
+                30+ Years of Global Excellence,
                 <br />
                 <span className="text-alumil-yellow">Now in India</span>
               </h1>
@@ -213,7 +213,7 @@ export default function About() {
           </div>
         </motion.section>
 
-        {/* Our Story with Mosaic Grid */}
+        {/* Our Story / Who We Are */}
         <section className="py-24 md:py-32 bg-white">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
@@ -225,38 +225,41 @@ export default function About() {
                 transition={{ duration: 0.8 }}
                 className="lg:col-span-2"
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
-                  Our Story
-                </h2>
-                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
-                  <p>
-                    Founded in the United States over 15 years ago, Almil
-                    Systems has been at the forefront of premium aluminium
-                    window and door manufacturing.
+                <div className="mb-12">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
+                    Who We Are
+                  </h2>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    <strong>ALMIL SYSTEMS</strong> is a global brand that has been setting new
+                    standards in <strong>Aluminium System Windows and Doors</strong> for more than
+                    three decades. Designed and developed in the United States, our
+                    solutions are built on <strong>precision, durability, and elegance</strong>.
                   </p>
-                  <p>
-                    Our journey began with a simple mission: to combine German
-                    engineering precision with American innovation.
-                  </p>
-                  <p>
-                    Today, we're proud to bring this legacy to India. With our
-                    state-of-the-art facility and expert team, we're committed
-                    to setting new standards in the Indian fenestration
-                    industry.
-                  </p>
-                  <p>
-                    Every window, every door, every system we create is a
-                    testament to our dedication to quality, innovation, and
-                    customer satisfaction.
-                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-alumil-dark">
+                    Our India Journey
+                  </h3>
+                  <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                    <p>
+                      With the establishment of <strong>ALMIL SYSTEMS INDIA PVT. LTD.</strong>, we are
+                      bringing our expertise to Indian homes, offices, and commercial
+                      projects.
+                    </p>
+                    <p>
+                      Each product is <strong>tailored to local needs</strong> while retaining the
+                      <strong>global excellence</strong> that defines ALMIL.
+                    </p>
+                  </div>
                 </div>
 
                 {/* Key Points */}
                 <div className="mt-8 space-y-4">
                   {[
                     { icon: "🇺🇸", text: "US-Engineered Excellence" },
-                    { icon: "🏭", text: "State-of-the-Art Facility" },
-                    { icon: "✨", text: "Premium Quality Standards" },
+                    { icon: "🌍", text: "Tailored for India" },
+                    { icon: "✨", text: "Precision & Elegance" },
                   ].map((item, idx) => (
                     <motion.div
                       key={idx}
@@ -457,7 +460,7 @@ export default function About() {
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { number: "15+", label: "Years Global" },
+                { number: "30+", label: "Years Global" },
                 { number: "500+", label: "Projects" },
                 { number: "10Y", label: "Warranty" },
                 { number: "24/7", label: "Support" },

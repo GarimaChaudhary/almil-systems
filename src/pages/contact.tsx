@@ -11,15 +11,13 @@ const contactInfo = [
   {
     icon: "📞",
     title: "Call Us",
-    details: ["+91 9024268374", "Mon-Sat: 9:00 AM - 6:00 PM", "Sunday: Closed"],
+    details: ["1800-890-0154", "+91 9024268374", "Mon-Sat: 10:00 AM - 7:00 PM", "Sunday: Closed"],
   },
   {
     icon: "✉️",
     title: "Email Us",
     details: [
-      "info@almilsystems.in",
-      "sales@almilsystems.in",
-      "support@almilsystems.in",
+      "info@almil.org",
     ],
   },
 ];

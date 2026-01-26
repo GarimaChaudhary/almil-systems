@@ -28,9 +28,8 @@ const productData = {
       "Locking mechanism: Multipoint or single-point options for enhanced security",
     ],
     images: [
+      "/images/products/SLIDER.jpg",
       "/images/products/Slider-1.jpg",
-      "/images/products/Slider-2.jpg",
-      "/images/products/Slim-Slider.jpg",
     ],
   },
   casement: {
@@ -51,6 +50,7 @@ const productData = {
       "Finish options: Powder coating (60–80 microns) and anodizing",
     ],
     images: [
+      "/images/products/CASEMENT DOOR.jpg",
       "/images/products/Casement-1.png",
       "/images/products/Casement-2.png",
       "/images/products/Casement-3.png",
@@ -76,9 +76,9 @@ const productData = {
       "Weather resistance: Compliant with Class 9A (EN12208)",
     ],
     images: [
+      "/images/products/Lift and Slide 1.jpg",
+      "/images/products/Lift and Slide 2.jpg",
       "/images/products/Slim-Slider.jpg",
-      "/images/products/Slider-1.jpg",
-      "/images/products/Slider-2.jpg",
     ],
   },
   "fold-slide": {
@@ -99,9 +99,10 @@ const productData = {
       "Glass compatibility: 6 mm – 32 mm",
     ],
     images: [
-      "/images/products/Slider-2.jpg",
-      "/images/products/Casement-Door-4.jpg",
-      "/images/products/Casement-Door-5.jpg",
+      "/images/products/SLIDE AND FOLD 1.jpg",
+      "/images/products/SLIDE AND FOLD 2 .jpg",
+      "/images/products/SLIDE AND FOLD 3 .jpg",
+      "/images/products/SLIDE AND FOLD 4.jpg",
     ],
   },
   fixed: {
@@ -122,9 +123,33 @@ const productData = {
       "Finish: Powder coating, anodizing, or wood-grain sublimation",
     ],
     images: [
+      "/images/products/FIX WINDOW.jpg",
       "/images/products/Casement-Door-5.jpg",
       "/images/products/Casement-2.png",
       "/images/products/Casement-1.png",
+    ],
+  },
+  louvers: {
+    name: "Operable Aluminium Louvers",
+    tagline: "Engineered airflow with style",
+    description:
+      "Our operable aluminium louvers provide precise control over natural ventilation and daylight. Designed for functionality and modern aesthetics, they enhance air circulation while maintaining privacy and security, making them ideal for facades, partitions, and privacy screens.",
+    technicalAdvantages: [
+      "Adjustable Ventilation: Louvered blades can be adjusted for controlled airflow and optimal temperature regulation.",
+      "Weather Protection: Engineered to deflect rain while maintaining airflow, ideal for tropical and coastal environments.",
+      "Energy Efficiency: Reduces dependence on mechanical HVAC systems by promoting natural ventilation.",
+      "Corrosion Resistance: High-quality aluminium with powder-coated or anodized finishes for long-lasting durability.",
+    ],
+    specifications: [
+      "Blade angles: 0° to 90° (manual or motorized operation)",
+      "Blade thickness: 1.2 mm – 2.0 mm aluminium",
+      "Frame options: Fixed or operable configurations",
+      "Finish: Powder coating in RAL or custom colors, anodizing available",
+    ],
+    images: [
+      "/images/products/LOUVERS 1.jpg",
+      "/images/products/LOUVERS 2.jpg",
+      "/images/products/LOUVERS 3.jpg",
     ],
   },
   custom: {
@@ -145,9 +170,10 @@ const productData = {
       "Compliant with ASTM, EN, and Indian Standards (IS)",
     ],
     images: [
-      "/images/products/Casement-1.jpg",
-      "/images/products/Casement-3.jpg",
-      "/images/products/Casement-Door-4.jpg",
+      "/images/products/CUSTOMIZED SOLUTIONS.jpg",
+      "/images/products/BUNGLOW.jpg",
+      "/images/products/FRONT PIC.jpg",
+
     ],
   },
 };
@@ -200,9 +226,11 @@ export default function ProductDetail() {
     );
 
   return (
-    <main className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden">
+    <main className="min-h-screen">
+      {/* Hero Section - Standardized */}
+      <motion.section
+        className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden"
+      >
         {/* Animated background pattern */}
         <motion.div
           animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
@@ -245,258 +273,37 @@ export default function ProductDetail() {
           ))}
         </div>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 py-16"
-        >
-          <div className="container mx-auto px-6">
-            {/* Breadcrumb Inside Hero */}
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="flex items-center text-sm mb-12"
+              className="inline-block px-5 py-2 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-6"
             >
-              <Link
-                href="/"
-                className="text-white/70 hover:text-white transition font-medium"
-              >
-                Home
-              </Link>
-              <svg
-                className="w-4 h-4 mx-2 text-white/40"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <Link
-                href="/products"
-                className="text-white/70 hover:text-white transition font-medium"
-              >
-                Products
-              </Link>
-              <svg
-                className="w-4 h-4 mx-2 text-white/40"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span className="text-alumil-yellow font-semibold">
-                {product.name}
-              </span>
+              Product Details
             </motion.div>
-
-            <div className="max-w-5xl mx-auto text-center">
-              {/* Premium Badge with Shine Effect */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase mb-8 relative overflow-hidden"
-                style={{
-                  background:
-                    "linear-gradient(90deg, var(--color-alumil-yellow), #ffffff, var(--color-alumil-yellow))",
-                  backgroundSize: "200% 100%",
-                }}
-              >
-                <motion.div
-                  animate={{ backgroundPosition: ["0% 0%", "200% 0%"] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                  style={{ backgroundSize: "200% 100%" }}
-                />
-                <svg
-                  className="w-4 h-4 relative z-10"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                <span className="relative z-10 text-white">
-                  Premium Collection
-                </span>
-              </motion.div>
-
-              {/* Product Name with Letter Animation */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight"
-              >
-                {product.name.split("").map((char, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 + index * 0.02 }}
-                    className="inline-block text-white"
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </motion.span>
-                ))}
-              </motion.h1>
-
-              {/* Tagline with Fade-in */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
-              >
-                {product.tagline}
-              </motion.p>
-
-              {/* CTA Buttons with Hover Glow */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 }}
-                className="flex flex-wrap justify-center gap-4 mb-16"
-              >
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-alumil-yellow text-alumil-dark hover:bg-white hover:text-alumil-dark rounded-xl font-semibold text-base overflow-hidden transition-all duration-300"
-                >
-                  {/* Animated shimmer */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "100%" }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatDelay: 1,
-                    }}
-                  />
-                  <span className="relative z-10">Request Quote</span>
-                  <svg
-                    className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
-                <button
-                  onClick={() => {
-                    const gallery = document.getElementById("gallery");
-                    if (gallery) {
-                      const headerHeight = 120;
-                      const elementPosition =
-                        gallery.getBoundingClientRect().top;
-                      const offsetPosition =
-                        elementPosition + window.pageYOffset - headerHeight;
-                      window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth",
-                      });
-                    }
-                  }}
-                  className="group inline-flex items-center gap-3 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-xl font-semibold text-base hover:bg-white/20 hover:border-white/50 transition-all duration-300"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span>View Gallery</span>
-                </button>
-              </motion.div>
-
-              {/* Stats Cards with Stagger Animation & Glass Morphism */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      delayChildren: 1.2,
-                      staggerChildren: 0.15,
-                    },
-                  },
-                }}
-                className="grid grid-cols-3 gap-6 max-w-4xl mx-auto"
-              >
-                {[
-                  { value: "5+", label: "Configurations", icon: "⚙️" },
-                  { value: "10Y", label: "Warranty", icon: "🛡️" },
-                  { value: "100%", label: "Premium", icon: "✨" },
-                ].map((stat, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={{
-                      hidden: { opacity: 0, y: 30 },
-                      visible: { opacity: 1, y: 0 },
-                    }}
-                    whileHover={{
-                      y: -8,
-                      scale: 1.05,
-                      transition: { duration: 0.2 },
-                    }}
-                    className="group relative bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-8 transition-all duration-300 hover:bg-white/15 cursor-pointer overflow-hidden"
-                  >
-                    {/* Hover glow effect */}
-                    <div className="absolute inset-0 bg-alumil-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                    <div className="relative z-10">
-                      <motion.div
-                        animate={{ rotate: [0, 10, -10, 0] }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          repeatDelay: 3,
-                        }}
-                        className="text-4xl mb-2"
-                      >
-                        {stat.icon}
-                      </motion.div>
-                      <div className="text-4xl font-bold text-alumil-yellow mb-2">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-white/80 font-medium">
-                        {stat.label}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </motion.section>
-      </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              {product.name}
+              <br />
+              <span className="text-alumil-yellow">{product.tagline}</span>
+            </h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
+            >
+              {product.description}
+            </motion.p>
+          </motion.div>
+        </div>
+      </motion.section>
 
       {/* Main Content - Gallery & Tabs */}
       <motion.section

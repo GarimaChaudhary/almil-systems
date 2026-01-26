@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import Head from "next/head";
+import Marquee from "@/components/ui/Marquee";
 
 const steps = [
   {
@@ -306,20 +307,106 @@ export default function WhyAlmil() {
                 Our Process
               </motion.div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
-                Six Steps to Perfection
+                From Consultation to After-Sales
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                From first consultation to lifetime support, we're with you
-                every step of the way
+                We believe excellence lies in the entire journey. Here is how we ensure perfection at every step.
               </p>
             </motion.div>
 
             {/* Process Steps Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-              {steps.map((step, idx) => (
+              {[
+                {
+                  number: "01",
+                  title: "Consultation",
+                  desc: "We listen, understand, and assess your unique requirements to offer the right solutions.",
+                  icon: "💬",
+                },
+                {
+                  number: "02",
+                  title: "Planning & Designing",
+                  desc: "Our team collaborates with architects, builders, and homeowners to design customised aluminium systems that perfectly fit your space.",
+                  icon: "📐",
+                },
+                {
+                  number: "03",
+                  title: "Surface Coating",
+                  desc: "Using advanced U.S. coating technology, we ensure durable finishes that withstand weather, wear, and time.",
+                  icon: "🎨",
+                },
+                {
+                  number: "04",
+                  title: "Production",
+                  desc: "Precision-driven manufacturing delivers products that meet international quality standards with zero compromise.",
+                  icon: "🏭",
+                },
+                {
+                  number: "05",
+                  title: "Installation",
+                  desc: "Our trained experts provide seamless installation with attention to every detail.",
+                  icon: "🔧",
+                },
+                {
+                  number: "06",
+                  title: "After-Sales Support",
+                  desc: "Our commitment doesn't end at installation — we ensure long-lasting performance with dedicated service and support.",
+                  icon: "🛡️",
+                },
+              ].map((step, idx) => (
                 <ProcessStepCard key={idx} step={step} index={idx} />
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Clients Section - Animated Marquee */}
+        <section className="py-24 bg-white border-t border-gray-100 overflow-hidden">
+          <div className="container mx-auto px-6 text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
+                Trusted by Industry Leaders
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Powering the spaces of India's most prestigious brands
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <Marquee speed={40} direction="left">
+              {[
+                "Hero", "HP", "Achal Jewels", "Bhangarh Fort", "Marks & Spencer",
+                "Siddha", "Crowne Plaza", "Ras Club", "Rajasthan Hospital",
+                "Kalpvriksh Hospital", "Imagine", "Urban Living"
+              ].map((client, idx) => (
+                <div
+                  key={idx}
+                  className="px-8 py-4 bg-gray-50 rounded-full font-bold text-gray-700 text-lg whitespace-nowrap border border-gray-100 hover:border-alumil-yellow/50 hover:bg-white hover:shadow-md transition-all duration-300"
+                >
+                  {client}
+                </div>
+              ))}
+            </Marquee>
+
+            <Marquee speed={40} direction="right">
+              {[
+                "Pink City Jewelhouse", "City Vibes", "Viewsonic Fitness", "D.D. Pharma",
+                "Re:Gen:Ta", "The Fern", "Shubham Group", "Pinnacle Infotech",
+                "Wish Empire", "Promod", "Usha Financial", "Smaaash"
+              ].map((client, idx) => (
+                <div
+                  key={idx}
+                  className="px-8 py-4 bg-gray-50 rounded-full font-bold text-gray-700 text-lg whitespace-nowrap border border-gray-100 hover:border-alumil-yellow/50 hover:bg-white hover:shadow-md transition-all duration-300"
+                >
+                  {client}
+                </div>
+              ))}
+            </Marquee>
           </div>
         </section>
 
@@ -396,7 +483,7 @@ export default function WhyAlmil() {
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { number: "15+", label: "Years Experience" },
+                { number: "30+", label: "Years Experience" },
                 { number: "500+", label: "Happy Clients" },
                 { number: "10Y", label: "Warranty" },
                 { number: "24/7", label: "Support" },

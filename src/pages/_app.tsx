@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Almil Systems India | Premium Aluminium Windows & Doors</title>
         <meta
           name="description"
-          content="US-engineered premium aluminium windows and doors. 15+ years of global excellence, now in India."
+          content="US-engineered premium aluminium windows and doors. 30+ years of global excellence, now in India."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
