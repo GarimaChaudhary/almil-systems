@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all">
+    <div className="bg-white rounded-md shadow-lg overflow-hidden hover:shadow-2xl transition-all">
       <div className="relative h-64 overflow-hidden group">
         <Image
           src={product.images[currentImageIndex]}
@@ -51,7 +51,7 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
           </button>
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A2332]/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <h3 className="absolute bottom-4 left-4 right-4 text-2xl font-bold text-white">
           {product.title}
         </h3>
@@ -62,19 +62,19 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
 
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className="text-[#1A2332] font-semibold hover:text-[#FDB913] mb-4"
+          className="text-alumil-dark font-semibold hover:text-alumil-yellow mb-4"
         >
           {showDetails ? "Hide" : "View"} Details
         </button>
 
         {showDetails && (
-          <div className="bg-gray-50 p-4 rounded-md mb-4 border-l-4 border-[#1A2332]">
+          <div className="bg-alumil-gray p-4 rounded-sm mb-4 border-l-4 border-alumil-dark">
             <h4 className="font-semibold mb-3">Key Features</h4>
             <ul className="space-y-2">
               {product.features.map((feature, index) => (
                 <li key={index} className="flex items-start text-sm">
                   <svg
-                    className="w-4 h-4 text-[#FDB913] mr-2 flex-shrink-0 mt-0.5"
+                    className="w-4 h-4 text-alumil-yellow mr-2 flex-shrink-0 mt-0.5"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -91,7 +91,7 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
           </div>
         )}
 
-        <button className="w-full bg-[#1A2332] text-white py-3 rounded-md hover:bg-[#FDB913] transition-colors font-semibold">
+        <button className="w-full bg-alumil-dark text-white py-3 rounded-md hover:bg-alumil-yellow transition-colors font-semibold">
           Learn More
         </button>
       </div>

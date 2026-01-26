@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import Head from "next/head";
 
@@ -58,6 +58,14 @@ function MagneticCard({
 }
 
 export default function ContactUs() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -109,9 +117,12 @@ export default function ContactUs() {
         />
       </Head>
 
-      <main className="min-h-screen bg-white">
+      <main ref={containerRef} className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#1A2332] via-[#2D3142] to-[#1A2332] text-white overflow-hidden">
+        <motion.section
+          style={{ opacity, scale }}
+          className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden"
+        >
           {/* Animated background pattern */}
           <motion.div
             animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
@@ -128,6 +139,32 @@ export default function ContactUs() {
             }}
           />
 
+          {/* Floating orbs */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute rounded-full bg-alumil-yellow/20 blur-3xl"
+                style={{
+                  width: Math.random() * 300 + 200,
+                  height: Math.random() * 300 + 200,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  x: [0, Math.random() * 100 - 50],
+                  y: [0, Math.random() * 100 - 50],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: Math.random() * 10 + 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
+
           <div className="container mx-auto px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -139,14 +176,14 @@ export default function ContactUs() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-5 py-2 bg-[#C9A96E] text-[#1A2332] rounded-full text-sm font-semibold mb-6"
+                className="inline-block px-5 py-2 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-6"
               >
                 Contact Us
               </motion.div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Let's Start a
                 <br />
-                <span className="text-[#C9A96E]">Conversation</span>
+                <span className="text-alumil-yellow">Conversation</span>
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -159,16 +196,16 @@ export default function ContactUs() {
               </motion.p>
             </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Contact Info Cards */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-alumil-gray">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {contactInfo.map((info, idx) => (
                 <MagneticCard
                   key={idx}
-                  className="p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#C9A96E] transition-all duration-300 text-center cursor-pointer"
+                  className="p-8 bg-white rounded-lg border-2 border-slate-100 hover:border-alumil-yellow transition-all duration-300 text-center cursor-pointer"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -183,7 +220,7 @@ export default function ContactUs() {
                     >
                       {info.icon}
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-[#1A2332] mb-4">
+                    <h3 className="text-2xl font-bold text-alumil-dark mb-4">
                       {info.title}
                     </h3>
                     {info.details.map((detail, i) => (
@@ -208,7 +245,7 @@ export default function ContactUs() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A2332]">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
                   Send Us a Message
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -222,7 +259,7 @@ export default function ContactUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 onSubmit={handleSubmit}
-                className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-gray-100"
+                className="bg-white rounded-lg shadow-2xl p-8 md:p-12 border-2 border-slate-100"
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -235,7 +272,7 @@ export default function ContactUs() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-[#D97642] focus:ring-2 focus:ring-[#D97642]/20 transition-all outline-none"
+                      className="w-full px-4 py-4 rounded-md border-2 border-gray-200 focus:border-alumil-yellow focus:ring-2 focus:ring-alumil-yellow/20 transition-all outline-none"
                       placeholder="John Doe"
                     />
                   </div>
@@ -249,7 +286,7 @@ export default function ContactUs() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-[#D97642] focus:ring-2 focus:ring-[#D97642]/20 transition-all outline-none"
+                      className="w-full px-4 py-4 rounded-md border-2 border-gray-200 focus:border-alumil-yellow focus:ring-2 focus:ring-alumil-yellow/20 transition-all outline-none"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -265,7 +302,7 @@ export default function ContactUs() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-[#D97642] focus:ring-2 focus:ring-[#D97642]/20 transition-all outline-none"
+                      className="w-full px-4 py-4 rounded-md border-2 border-gray-200 focus:border-alumil-yellow focus:ring-2 focus:ring-alumil-yellow/20 transition-all outline-none"
                       placeholder="+91 98765 43210"
                     />
                   </div>
@@ -278,7 +315,7 @@ export default function ContactUs() {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-[#D97642] focus:ring-2 focus:ring-[#D97642]/20 transition-all outline-none"
+                      className="w-full px-4 py-4 rounded-md border-2 border-gray-200 focus:border-alumil-yellow focus:ring-2 focus:ring-alumil-yellow/20 transition-all outline-none"
                     >
                       <option value="">Select a subject</option>
                       <option value="quote">Request a Quote</option>
@@ -302,7 +339,7 @@ export default function ContactUs() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-4 rounded-xl border-2 border-gray-200 focus:border-[#D97642] focus:ring-2 focus:ring-[#D97642]/20 transition-all outline-none resize-none"
+                    className="w-full px-4 py-4 rounded-md border-2 border-gray-200 focus:border-alumil-yellow focus:ring-2 focus:ring-alumil-yellow/20 transition-all outline-none resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -312,7 +349,7 @@ export default function ContactUs() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-xl font-semibold text-lg shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-5 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold text-lg shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -362,7 +399,7 @@ export default function ContactUs() {
         </section>
 
         {/* Map Section with Jaipur Location */}
-        <section className="py-24 bg-gray-50">
+        <section className="py-24 bg-alumil-gray">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -370,7 +407,7 @@ export default function ContactUs() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A2332]">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
                 Find Us in Jaipur
               </h2>
               <p className="text-xl text-gray-600">
@@ -383,7 +420,7 @@ export default function ContactUs() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="w-full h-[500px] bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-2 border-gray-300"
+              className="w-full h-[500px] bg-slate-200 rounded-md overflow-hidden shadow-2xl border-2 border-slate-300"
             >
               {/* Add your Google Maps iframe here with the Jaipur address */}
               <iframe
@@ -401,7 +438,7 @@ export default function ContactUs() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 bg-[#1A2332] text-white">
+        <section className="py-24 bg-alumil-dark text-white">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -419,7 +456,7 @@ export default function ContactUs() {
                   href="tel:+919024268374"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold text-lg transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-10 py-5 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold text-lg transition-all duration-300"
                 >
                   <svg
                     className="w-5 h-5"
@@ -434,7 +471,7 @@ export default function ContactUs() {
                   href="mailto:info@almil.org"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white rounded-md font-semibold text-lg hover:bg-white/20 transition-all duration-300"
                 >
                   <svg
                     className="w-5 h-5"

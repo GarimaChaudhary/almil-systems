@@ -1,4 +1,4 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import Head from "next/head";
 
@@ -72,7 +72,7 @@ function AnimatedCounter({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, type: "spring" }}
-      className="text-5xl md:text-6xl font-bold text-[#FDB913]"
+      className="text-5xl md:text-6xl font-bold text-alumil-yellow"
     >
       {end}
       {suffix}
@@ -114,6 +114,14 @@ function MagneticCard({
 }
 
 export default function About() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95]);
   return (
     <>
       <Head>
@@ -124,9 +132,12 @@ export default function About() {
         />
       </Head>
 
-      <main className="min-h-screen bg-white">
+      <main ref={containerRef} className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#1A2332] via-[#2D3142] to-[#1A2332] text-white overflow-hidden">
+        <motion.section
+          style={{ opacity, scale }}
+          className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden"
+        >
           {/* Animated background pattern */}
           <motion.div
             animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
@@ -143,38 +154,64 @@ export default function About() {
             }}
           />
 
+          {/* Floating orbs */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute rounded-full bg-alumil-yellow/20 blur-3xl"
+                style={{
+                  width: Math.random() * 300 + 200,
+                  height: Math.random() * 300 + 200,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  x: [0, Math.random() * 100 - 50],
+                  y: [0, Math.random() * 100 - 50],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: Math.random() * 10 + 10,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
+
           <div className="container mx-auto px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl"
+              className="max-w-4xl mx-auto text-center"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-5 py-2 bg-[#C9A96E] text-[#1A2332] rounded-full text-sm font-semibold mb-6"
+                className="inline-block px-5 py-2 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-6"
               >
                 About Almil Systems
               </motion.div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 15+ Years of Global Excellence,
                 <br />
-                <span className="text-[#C9A96E]">Now in India</span>
+                <span className="text-alumil-yellow">Now in India</span>
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-xl text-gray-300 leading-relaxed"
+                className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
               >
                 Bringing world-class aluminium systems, superior craftsmanship,
                 and unmatched quality to transform Indian homes and businesses.
               </motion.p>
             </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Our Story with Mosaic Grid */}
         <section className="py-24 md:py-32 bg-white">
@@ -188,7 +225,7 @@ export default function About() {
                 transition={{ duration: 0.8 }}
                 className="lg:col-span-2"
               >
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A2332]">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
                   Our Story
                 </h2>
                 <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
@@ -232,7 +269,7 @@ export default function About() {
                       <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-2xl flex-shrink-0">
                         {item.icon}
                       </div>
-                      <span className="text-lg font-semibold text-[#1A2332]">
+                      <span className="text-lg font-semibold text-alumil-dark">
                         {item.text}
                       </span>
                     </motion.div>
@@ -327,7 +364,7 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A2332]">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
                 Our Core Values
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -339,7 +376,7 @@ export default function About() {
               {values.map((value, idx) => (
                 <MagneticCard
                   key={idx}
-                  className="p-8 bg-white rounded-2xl border-2 border-gray-200 hover:border-[#C9A96E] transition-all duration-300 text-center cursor-pointer"
+                  className="p-8 bg-white rounded-lg border-2 border-slate-100 hover:border-alumil-yellow transition-all duration-300 text-center cursor-pointer"
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -358,7 +395,7 @@ export default function About() {
                     <div className="text-sm text-gray-500 mb-4">
                       {value.label}
                     </div>
-                    <h3 className="text-xl font-bold text-[#1A2332] mb-3">
+                    <h3 className="text-xl font-bold text-alumil-dark mb-3">
                       {value.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -380,7 +417,7 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A2332]">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
                 Excellence at Every Level
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -397,7 +434,7 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.2 }}
                   whileHover={{ y: -10 }}
-                  className="group relative h-96 rounded-2xl overflow-hidden shadow-xl"
+                  className="group relative h-96 rounded-md overflow-hidden shadow-xl"
                 >
                   <img
                     src={member.image}
@@ -416,7 +453,7 @@ export default function About() {
         </section>
 
         {/* Stats Banner */}
-        <section className="py-20 bg-gradient-to-r from-[#D97642] to-[#FDB913]">
+        <section className="py-20 bg-alumil-dark border-t border-white/10">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -444,7 +481,7 @@ export default function About() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-[#1A2332] text-white">
+        <section className="py-24 bg-alumil-dark text-white">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -461,7 +498,7 @@ export default function About() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold text-lg transition-all duration-300"
               >
                 Get in Touch
                 <svg

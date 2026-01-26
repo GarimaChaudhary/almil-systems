@@ -15,6 +15,7 @@ const navigation = [
   { name: "HOME", href: "/" },
   { name: "ABOUT", href: "/about" },
   { name: "PRODUCTS", href: "/products" },
+  { name: "PROJECTS", href: "/projects" },
   { name: "WHY ALMIL", href: "/why-almil" },
   { name: "CONTACT", href: "/contact" },
 ];
@@ -50,9 +51,8 @@ export default function Header() {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-        scrolled ? "shadow-md" : "shadow-sm"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${scrolled ? "shadow-md" : "shadow-sm"
+        }`}
     >
       <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -85,17 +85,16 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative group ${
-                      isActive
-                        ? "text-[#FDB913]"
-                        : "text-[#2D3142] hover:text-[#FDB913]"
-                    }`}
+                    className={`text-sm font-semibold tracking-wide transition-colors duration-300 relative group ${isActive
+                        ? "text-alumil-yellow"
+                        : "text-alumil-dark hover:text-alumil-yellow"
+                      }`}
                   >
                     {item.name}
 
                     {/* Fixed Animated Underline - Reactive to pathname changes */}
                     <motion.span
-                      className="absolute -bottom-1 left-0 h-0.5 bg-[#FDB913]"
+                      className="absolute -bottom-1 left-0 h-0.5 bg-alumil-yellow"
                       animate={{ width: isActive ? "100%" : "0%" }}
                       whileHover={{ width: "100%" }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -115,7 +114,7 @@ export default function Header() {
             >
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 overflow-hidden bg-[#FDB913] text-white shadow-lg shadow-[#FDB913]/30 hover:shadow-[#FDB913]/50 hover:bg-[#E5A50A]"
+                className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-md font-semibold text-sm transition-all duration-300 overflow-hidden bg-alumil-yellow text-alumil-dark shadow-md"
               >
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
@@ -163,7 +162,7 @@ export default function Header() {
                   closed: { rotate: 0, y: 0 },
                   open: { rotate: 45, y: 6 },
                 }}
-                className="absolute left-0 top-1 w-6 h-0.5 bg-[#1A2332] transition-colors"
+                className="absolute left-0 top-1 w-6 h-0.5 bg-alumil-dark transition-colors"
                 style={{ transformOrigin: "center" }}
               />
               <motion.span
@@ -171,14 +170,14 @@ export default function Header() {
                   closed: { opacity: 1 },
                   open: { opacity: 0 },
                 }}
-                className="absolute left-0 top-[11px] w-6 h-0.5 bg-[#1A2332] transition-colors"
+                className="absolute left-0 top-[11px] w-6 h-0.5 bg-alumil-dark transition-colors"
               />
               <motion.span
                 variants={{
                   closed: { rotate: 0, y: 0 },
                   open: { rotate: -45, y: -6 },
                 }}
-                className="absolute left-0 top-[21px] w-6 h-0.5 bg-[#1A2332] transition-colors"
+                className="absolute left-0 top-[21px] w-6 h-0.5 bg-alumil-dark transition-colors"
                 style={{ transformOrigin: "center" }}
               />
             </motion.div>
@@ -222,11 +221,10 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`block text-base font-semibold py-4 px-4 rounded-lg transition-all duration-300 ${
-                        router.pathname === item.href
-                          ? "bg-gray-50 text-[#FDB913] shadow-sm"
-                          : "text-[#2D3142] hover:bg-gray-50"
-                      }`}
+                      className={`block text-base font-semibold py-4 px-4 rounded-lg transition-all duration-300 ${router.pathname === item.href
+                          ? "bg-alumil-gray text-alumil-yellow shadow-sm"
+                          : "text-alumil-dark hover:bg-alumil-gray"
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -243,7 +241,7 @@ export default function Header() {
                   <Link
                     href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 px-6 py-4 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold transition-all duration-300 shadow-lg"
+                    className="flex items-center justify-center gap-2 px-6 py-4 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold transition-all duration-300 shadow-lg"
                   >
                     GET QUOTE
                     <svg

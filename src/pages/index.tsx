@@ -71,7 +71,7 @@ export default function Home() {
   const heroY = useTransform(scrollY, [0, 500], [0, 100]);
 
   return (
-    <main className="min-h-screen bg-[#F7F3ED]">
+    <main className="min-h-screen bg-alumil-gray">
       {/* Hero Section - FITS PERFECTLY IN VIEWPORT */}
       <section className="relative h-screen flex items-center overflow-hidden">
         {/* Background Image with Parallax */}
@@ -85,7 +85,7 @@ export default function Home() {
             quality={100}
           />
           {/* Elegant gradient overlay - deep navy to transparent */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1A2332]/95 via-[#1A2332]/75 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-alumil-dark/95 via-alumil-dark/75 to-transparent"></div>
         </motion.div>
 
         {/* Content */}
@@ -96,7 +96,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#C9A96E] text-[#1A2332] rounded-full text-sm font-semibold mb-8 shadow-lg"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-8 shadow-lg"
             >
               ✨ Global Aluminium Systems, Now in India
             </motion.div>
@@ -110,7 +110,7 @@ export default function Home() {
             >
               Crafting Views,
               <br />
-              <span className="text-[#C9A96E]">Shaping Spaces</span>
+              <span className="text-alumil-yellow">Shaping Spaces</span>
             </motion.h1>
 
             {/* Subheading */}
@@ -135,7 +135,7 @@ export default function Home() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#FDB913] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Explore Products
                 <svg
@@ -155,7 +155,7 @@ export default function Home() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/30 hover:bg-white/20 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-md font-semibold border border-white/30 hover:bg-white/20 transition-all duration-300"
               >
                 <svg
                   className="w-5 h-5"
@@ -188,7 +188,7 @@ export default function Home() {
                 { value: "24/7", label: "Support" },
               ].map((stat, idx) => (
                 <div key={idx} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-[#C9A96E] mb-1">
+                  <div className="text-3xl md:text-4xl font-bold text-alumil-yellow mb-1">
                     {stat.value}
                   </div>
                   <div className="text-sm text-gray-300 font-medium">
@@ -207,7 +207,7 @@ export default function Home() {
             className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hidden lg:block"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-[#FDB913] rounded-xl flex items-center justify-center text-white text-2xl">
+              <div className="w-14 h-14 bg-alumil-yellow rounded-md flex items-center justify-center text-alumil-dark text-xl">
                 ⭐
               </div>
               <div>
@@ -229,10 +229,10 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16 md:mb-20"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1A2332]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-alumil-dark">
               Welcome to Almil Systems
             </h2>
-            <p className="text-lg md:text-xl text-[#2D3142]/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-alumil-dark/70 max-w-3xl mx-auto leading-relaxed">
               With our entry into India, we bring world-class quality, modern
               aesthetics, and enduring performance to elevate residential,
               commercial, and architectural spaces.
@@ -246,13 +246,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6 }}
-              className="p-8 md:p-10 bg-[#F7F3ED] rounded-2xl border border-[#C9A96E]/20 hover:border-[#C9A96E]/40 transition-all duration-300"
+              className="p-8 md:p-10 bg-alumil-gray rounded-lg border border-alumil-dark/10 hover:border-alumil-yellow transition-all duration-300"
             >
               <div className="text-5xl mb-6">🎯</div>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#1A2332] mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-alumil-dark mb-4">
                 Our Vision
               </h3>
-              <p className="text-[#2D3142]/70 leading-relaxed text-lg">
+              <p className="text-alumil-dark/70 leading-relaxed text-lg">
                 To redefine the way India experiences living and working spaces
                 by offering innovative aluminium window and door solutions that
                 blend design, durability, and sustainability.
@@ -265,10 +265,10 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="p-8 md:p-10 bg-[#F7F3ED] rounded-2xl border border-[#C9A96E]/20 hover:border-[#C9A96E]/40 transition-all duration-300"
+              className="p-8 md:p-10 bg-alumil-gray rounded-lg border border-alumil-dark/10 hover:border-alumil-yellow transition-all duration-300"
             >
               <div className="text-5xl mb-6">🚀</div>
-              <h3 className="text-2xl md:text-3xl font-bold text-[#1A2332] mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-alumil-dark mb-6">
                 Our Mission in India
               </h3>
               <ul className="space-y-4">
@@ -281,7 +281,7 @@ export default function Home() {
                     key={idx}
                     className="flex items-start gap-3 text-[#2D3142]/70"
                   >
-                    <span className="text-[#D97642] text-xl flex-shrink-0">
+                    <span className="text-alumil-yellow text-xl flex-shrink-0">
                       ✓
                     </span>
                     <span className="text-lg">{item}</span>
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* Products Grid - CLEAN, NO CRAZY EFFECTS */}
-      <section className="py-24 md:py-32 bg-[#1A2332]">
+      <section className="py-24 md:py-32 bg-alumil-dark">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -322,7 +322,7 @@ export default function Home() {
                 className="group"
               >
                 <Link href={`/products/${product.id}`}>
-                  <div className="relative h-80 md:h-96 rounded-2xl overflow-hidden">
+                  <div className="relative h-80 md:h-96 rounded-md overflow-hidden">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -333,7 +333,7 @@ export default function Home() {
 
                     {/* Content */}
                     <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#C9A96E] transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-alumil-yellow transition-colors duration-300">
                         {product.name}
                       </h3>
                       <p className="text-gray-200 text-sm opacity-90">
@@ -342,7 +342,7 @@ export default function Home() {
                     </div>
 
                     {/* Hover Arrow */}
-                    <div className="absolute top-6 right-6 w-12 h-12 bg-[#FDB913] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute top-6 right-6 w-12 h-12 bg-alumil-yellow rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <svg
                         className="w-6 h-6 text-white"
                         fill="none"
@@ -371,7 +371,7 @@ export default function Home() {
           >
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#FDB913] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold transition-all duration-300"
             >
               View All Products
               <svg
@@ -401,10 +401,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16 md:mb-20"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#1A2332]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-alumil-dark">
               Why Choose Almil?
             </h2>
-            <p className="text-lg md:text-xl text-[#2D3142]/70 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-alumil-dark/70 max-w-2xl mx-auto">
               Excellence in every detail, backed by 15+ years of global
               expertise
             </p>
@@ -418,13 +418,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: idx * 0.1, duration: 0.6 }}
-                className="p-8 bg-[#F7F3ED] rounded-2xl border border-[#C9A96E]/20 hover:border-[#C9A96E]/40 transition-all duration-300 text-center"
+                className="p-8 bg-alumil-gray rounded-lg border border-alumil-dark/10 hover:border-alumil-yellow transition-all duration-300 text-center"
               >
                 <div className="text-5xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-[#1A2332] mb-3">
+                <h3 className="text-xl font-bold text-alumil-dark mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-[#2D3142]/70">{feature.description}</p>
+                <p className="text-alumil-dark/70">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -432,7 +432,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-[#1A2332]">
+      <section className="py-24 md:py-32 bg-alumil-dark">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -450,7 +450,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#C9A96E] text-white rounded-lg font-semibold transition-all duration-300 text-lg"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold transition-all duration-300 text-lg"
               >
                 Contact Us Now
                 <svg
@@ -469,7 +469,7 @@ export default function Home() {
               </Link>
               <a
                 href="tel:+919024268374"
-                className="inline-flex items-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm text-white rounded-lg font-semibold border border-white/30 hover:bg-white/20 transition-all duration-300 text-lg"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm text-white rounded-md font-semibold border border-white/30 hover:bg-white/20 transition-all duration-300 text-lg"
               >
                 <svg
                   className="w-5 h-5"

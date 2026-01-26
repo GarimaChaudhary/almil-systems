@@ -181,7 +181,7 @@ export default function ProductDetail() {
           </h1>
           <Link
             href="/products"
-            className="text-[#FDB913] hover:text-[#C9A96E] font-semibold"
+            className="text-alumil-yellow hover:text-alumil-yellow/80 font-semibold"
           >
             Back to Products
           </Link>
@@ -201,40 +201,45 @@ export default function ProductDetail() {
 
   return (
     <main className="min-h-screen pt-20">
-      {/* Hero Section with Dark Background & Integrated Breadcrumb */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#1A2332] via-[#2D3142] to-[#3d4556]">
-        {/* Animated Background Gradient */}
+      {/* Hero Section */}
+      <div className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden">
+        {/* Animated background pattern */}
         <motion.div
-          animate={{
-            background: [
-              "radial-gradient(circle at 20% 50%, rgba(217, 118, 66, 0.08) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 50%, rgba(201, 169, 110, 0.08) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 50%, rgba(217, 118, 66, 0.08) 0%, transparent 50%)",
-            ],
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
         />
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+        {/* Floating orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-white/20 rounded-full"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * 800,
+              className="absolute rounded-full bg-alumil-yellow/20 blur-3xl"
+              style={{
+                width: Math.random() * 300 + 200,
+                height: Math.random() * 300 + 200,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
               }}
               animate={{
-                y: [null, Math.random() * -200],
-                opacity: [0, 1, 0],
+                x: [0, Math.random() * 100 - 50],
+                y: [0, Math.random() * 100 - 50],
+                scale: [1, 1.2, 1],
               }}
               transition={{
                 duration: Math.random() * 10 + 10,
                 repeat: Infinity,
-                delay: Math.random() * 5,
-                ease: "linear",
+                repeatType: "reverse",
               }}
             />
           ))}
@@ -288,7 +293,7 @@ export default function ProductDetail() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-[#FDB913] font-semibold">
+              <span className="text-alumil-yellow font-semibold">
                 {product.name}
               </span>
             </motion.div>
@@ -302,7 +307,7 @@ export default function ProductDetail() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase mb-8 relative overflow-hidden"
                 style={{
                   background:
-                    "linear-gradient(90deg, #D97642, #C9A96E, #D97642)",
+                    "linear-gradient(90deg, var(--color-alumil-yellow), #ffffff, var(--color-alumil-yellow))",
                   backgroundSize: "200% 100%",
                 }}
               >
@@ -367,7 +372,7 @@ export default function ProductDetail() {
               >
                 <Link
                   href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#D97642] to-[#FDB913] text-white rounded-xl font-semibold text-base overflow-hidden"
+                  className="group relative inline-flex items-center gap-3 px-10 py-5 bg-alumil-yellow text-alumil-dark hover:bg-white hover:text-alumil-dark rounded-xl font-semibold text-base overflow-hidden transition-all duration-300"
                 >
                   {/* Animated shimmer */}
                   <motion.div
@@ -464,7 +469,7 @@ export default function ProductDetail() {
                     className="group relative bg-white/10 backdrop-blur-md rounded-2xl shadow-xl border border-white/20 p-8 transition-all duration-300 hover:bg-white/15 cursor-pointer overflow-hidden"
                   >
                     {/* Hover glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#D97642]/20 to-[#FDB913]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-alumil-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div className="relative z-10">
                       <motion.div
@@ -478,7 +483,7 @@ export default function ProductDetail() {
                       >
                         {stat.icon}
                       </motion.div>
-                      <div className="text-4xl font-bold text-[#FDB913] mb-2">
+                      <div className="text-4xl font-bold text-alumil-yellow mb-2">
                         {stat.value}
                       </div>
                       <div className="text-sm text-white/80 font-medium">
@@ -551,11 +556,10 @@ export default function ProductDetail() {
                       whileHover={{ scale: 1.1, y: -4 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setSelectedImage(idx)}
-                      className={`relative h-24 md:h-32 rounded-2xl overflow-hidden transition-all ${
-                        selectedImage === idx
-                          ? "ring-4 ring-[#D97642] shadow-2xl shadow-[#D97642]/30"
-                          : "opacity-60 hover:opacity-100 shadow-lg ring-2 ring-gray-200"
-                      } bg-gray-100`}
+                      className={`relative h-24 md:h-32 rounded-2xl overflow-hidden transition-all ${selectedImage === idx
+                        ? "ring-4 ring-alumil-yellow shadow-2xl shadow-alumil-yellow/30"
+                        : "opacity-60 hover:opacity-100 shadow-lg ring-2 ring-gray-200"
+                        } bg-gray-100`}
                     >
                       <Image
                         src={img}
@@ -582,16 +586,15 @@ export default function ProductDetail() {
                     onClick={() => setActiveTab(tab.key)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`relative flex-1 px-6 py-4 rounded-xl font-semibold transition-all ${
-                      activeTab === tab.key
-                        ? "text-white"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-white"
-                    }`}
+                    className={`relative flex-1 px-6 py-4 rounded-xl font-semibold transition-all ${activeTab === tab.key
+                      ? "text-white"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-white"
+                      }`}
                   >
                     {activeTab === tab.key && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute inset-0 bg-gradient-to-r from-[#D97642] to-[#FDB913] rounded-xl shadow-lg"
+                        className="absolute inset-0 bg-alumil-yellow rounded-xl shadow-lg"
                         transition={{
                           type: "spring",
                           stiffness: 500,
@@ -614,7 +617,7 @@ export default function ProductDetail() {
                     transition={{ duration: 0.3 }}
                     className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-10 shadow-xl border border-gray-100"
                   >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-[#1A2332] to-[#D97642] bg-clip-text text-transparent">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-alumil-dark">
                       Product Overview
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed mb-8">
@@ -622,7 +625,7 @@ export default function ProductDetail() {
                     </p>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#D97642] to-[#FDB913] text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-alumil-yellow text-alumil-dark hover:bg-alumil-dark hover:text-white rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                     >
                       Get a Quote
                       <svg
@@ -657,7 +660,7 @@ export default function ProductDetail() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
                         whileHover={{ x: 6, scale: 1.01 }}
-                        className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-100 hover:border-[#D97642] hover:shadow-xl transition-all"
+                        className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-100 hover:border-alumil-yellow hover:shadow-xl transition-all"
                       >
                         <motion.div
                           animate={{ scale: [1, 1.2, 1] }}
@@ -666,7 +669,7 @@ export default function ProductDetail() {
                             repeat: Infinity,
                             repeatDelay: 3,
                           }}
-                          className="w-2 h-2 bg-gradient-to-br from-[#D97642] to-[#FDB913] rounded-full mt-2 flex-shrink-0"
+                          className="w-2 h-2 bg-alumil-yellow rounded-full mt-2 flex-shrink-0"
                         />
                         <p className="text-gray-700 leading-relaxed">
                           {advantage}
@@ -691,7 +694,7 @@ export default function ProductDetail() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
                         whileHover={{ x: 6, scale: 1.01 }}
-                        className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-100 hover:border-[#D97642] hover:shadow-xl transition-all"
+                        className="flex items-start gap-4 p-6 bg-white rounded-2xl border border-gray-100 hover:border-alumil-yellow hover:shadow-xl transition-all"
                       >
                         <motion.div
                           animate={{ rotate: [0, 360] }}
@@ -700,7 +703,7 @@ export default function ProductDetail() {
                             repeat: Infinity,
                             ease: "linear",
                           }}
-                          className="w-2 h-2 bg-gradient-to-br from-[#D97642] to-[#FDB913] rounded-full mt-2 flex-shrink-0"
+                          className="w-2 h-2 bg-alumil-yellow rounded-full mt-2 flex-shrink-0"
                         />
                         <p className="text-gray-700 leading-relaxed">{spec}</p>
                       </motion.div>

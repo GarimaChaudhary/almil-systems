@@ -1,11 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-alumil-yellow: #FFD300;
+  --color-alumil-dark: #3E4346;
+  --color-alumil-gray: #F5F5F5;
+  --color-alumil-white: #FFFFFF;
+  
+  --radius-sm: 4px;
+  --radius-md: 4px; /* Aligning md with sm for that sharp industrial look */
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply font-sans antialiased text-gray-900;
+    @apply font-sans antialiased text-alumil-dark bg-white;
   }
 }

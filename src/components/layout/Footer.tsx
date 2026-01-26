@@ -52,13 +52,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#1A2332] text-white">
+    <footer className="bg-alumil-dark text-white">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Products */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">Products</h3>
+            <h3 className="text-lg font-bold mb-6 text-alumil-yellow">Products</h3>
             <ul className="space-y-3">
               {products.map((item) => (
                 <li key={item.name}>
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">Company</h3>
+            <h3 className="text-lg font-bold mb-6 text-alumil-yellow">Company</h3>
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
@@ -92,12 +92,12 @@ export default function Footer() {
 
           {/* Offices */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">Offices</h3>
+            <h3 className="text-lg font-bold mb-6 text-alumil-yellow">Offices</h3>
             <ul className="space-y-4 text-sm text-gray-400">
               {/* USA Office */}
               <li className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-[#FDB913] flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-alumil-yellow flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ export default function Footer() {
               {/* Jaipur Office */}
               <li className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-[#FDB913] flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-alumil-yellow flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -161,7 +161,7 @@ export default function Footer() {
               {/* Dubai Office */}
               <li className="flex items-start gap-3">
                 <svg
-                  className="w-5 h-5 text-[#FDB913] flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-alumil-yellow flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -193,13 +193,13 @@ export default function Footer() {
 
           {/* Contact Us */}
           <div>
-            <h3 className="text-lg font-bold mb-6 text-[#C9A96E]">
+            <h3 className="text-lg font-bold mb-6 text-alumil-yellow">
               Contact Us
             </h3>
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-[#FDB913] flex-shrink-0"
+                  className="w-5 h-5 text-alumil-yellow flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -220,7 +220,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <svg
-                  className="w-5 h-5 text-[#FDB913] flex-shrink-0"
+                  className="w-5 h-5 text-alumil-yellow flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -248,7 +248,7 @@ export default function Footer() {
                   key={item.name}
                   href={item.href}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 bg-white/10 hover:bg-[#FDB913] rounded-lg flex items-center justify-center transition-colors duration-300"
+                  className="w-10 h-10 bg-white/10 hover:bg-alumil-yellow rounded-md flex items-center justify-center transition-colors duration-300"
                   aria-label={item.name}
                 >
                   {item.icon}

@@ -58,7 +58,7 @@ function AnimatedCounter({
       initial={{ opacity: 0, scale: 0.5 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, type: "spring" }}
-      className="text-5xl md:text-6xl font-bold text-[#FDB913]"
+      className="text-5xl md:text-6xl font-bold text-alumil-yellow"
     >
       {end}
       {suffix}
@@ -115,7 +115,7 @@ function ProcessStepCard({
           rotateY,
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="relative bg-white rounded-3xl p-8 shadow-xl border-2 border-gray-100 hover:border-[#C9A96E] transition-colors duration-300"
+        className="relative bg-white rounded-lg p-8 shadow-xl border-2 border-slate-100 hover:border-alumil-yellow transition-colors duration-300"
         style={{
           transformStyle: "preserve-3d",
         }}
@@ -127,7 +127,7 @@ function ProcessStepCard({
         <motion.div
           whileHover={{ rotate: 360, scale: 1.1 }}
           transition={{ duration: 0.6 }}
-          className="w-20 h-20 mx-auto bg-gradient-to-br from-[#D97642] to-[#FDB913] rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-2xl mb-6 relative z-10"
+          className="w-20 h-20 mx-auto bg-alumil-yellow rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-lg mb-6 relative z-10"
           style={{
             transform: "translateZ(40px)",
           }}
@@ -137,7 +137,7 @@ function ProcessStepCard({
 
         {/* Number */}
         <div
-          className="text-5xl font-bold text-[#FDB913] mb-3 text-center"
+          className="text-5xl font-bold text-alumil-yellow mb-3 text-center"
           style={{
             transform: "translateZ(30px)",
           }}
@@ -147,7 +147,7 @@ function ProcessStepCard({
 
         {/* Title */}
         <h3
-          className="text-2xl font-bold text-[#1A2332] mb-4 text-center"
+          className="text-2xl font-bold text-alumil-dark mb-4 text-center"
           style={{
             transform: "translateZ(20px)",
           }}
@@ -177,7 +177,7 @@ function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX }}
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D97642] to-[#FDB913] origin-left z-50"
+      className="fixed top-0 left-0 right-0 h-1 bg-alumil-yellow origin-left z-50"
     />
   );
 }
@@ -208,7 +208,7 @@ export default function WhyAlmil() {
         {/* Hero Section */}
         <motion.section
           style={{ opacity, scale }}
-          className="relative pt-32 pb-20 bg-gradient-to-br from-[#1A2332] via-[#2D3142] to-[#1A2332] text-white overflow-hidden"
+          className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden"
         >
           {/* Animated background pattern */}
           <motion.div
@@ -231,7 +231,7 @@ export default function WhyAlmil() {
             {[...Array(5)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute rounded-full bg-gradient-to-br from-[#D97642]/20 to-[#FDB913]/20 blur-3xl"
+                className="absolute rounded-full bg-alumil-yellow/20 blur-3xl"
                 style={{
                   width: Math.random() * 300 + 200,
                   height: Math.random() * 300 + 200,
@@ -263,14 +263,14 @@ export default function WhyAlmil() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-5 py-2 bg-[#C9A96E] text-[#1A2332] rounded-full text-sm font-semibold mb-6"
+                className="inline-block px-5 py-2 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-6"
               >
                 Why Choose Almil
               </motion.div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 Excellence in Every
                 <br />
-                <span className="text-[#C9A96E]">Step of the Journey</span>
+                <span className="text-alumil-yellow">Step of the Journey</span>
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}
@@ -288,7 +288,7 @@ export default function WhyAlmil() {
         {/* Process Section with Animated Cards */}
         <section className="py-24 md:py-32 bg-white relative overflow-hidden">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F7F3ED] via-white to-[#F7F3ED] opacity-50" />
+          <div className="absolute inset-0 bg-alumil-gray opacity-50" />
 
           <div className="container mx-auto px-6 relative z-10">
             <motion.div
@@ -301,11 +301,11 @@ export default function WhyAlmil() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="inline-block px-5 py-2 bg-gradient-to-r from-[#D97642] to-[#FDB913] text-white rounded-full text-sm font-semibold mb-6"
+                className="inline-block px-5 py-2 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-6"
               >
                 Our Process
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#1A2332]">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-alumil-dark">
                 Six Steps to Perfection
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -371,7 +371,7 @@ export default function WhyAlmil() {
                 <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
                   Almil Systems
                   <br />
-                  <span className="text-[#C9A96E]">
+                  <span className="text-alumil-yellow">
                     Where Global Technology
                     <br />
                     Meets Indian Living
@@ -385,14 +385,14 @@ export default function WhyAlmil() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.3 }}
-                className="w-32 h-1 bg-gradient-to-r from-[#D97642] to-[#FDB913] mx-auto rounded-full"
+                className="w-32 h-1 bg-alumil-yellow mx-auto rounded-full"
               />
             </motion.div>
           </div>
         </section>
 
         {/* Stats Banner */}
-        <section className="py-20 bg-gradient-to-r from-[#D97642] to-[#FDB913]">
+        <section className="py-20 bg-alumil-dark border-t border-white/10">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
@@ -421,7 +421,7 @@ export default function WhyAlmil() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 bg-[#1A2332] text-white">
+        <section className="py-24 bg-alumil-dark text-white">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -442,7 +442,7 @@ export default function WhyAlmil() {
                   boxShadow: "0 20px 40px rgba(217, 118, 66, 0.4)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 px-10 py-5 bg-[#FDB913] hover:bg-[#E5A50A] text-white rounded-lg font-semibold text-lg transition-all duration-300"
+                className="inline-flex items-center gap-2 px-10 py-5 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold text-lg transition-all duration-300"
               >
                 Get Started Today
                 <motion.svg

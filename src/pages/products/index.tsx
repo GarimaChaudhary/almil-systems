@@ -1,12 +1,24 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ProductGrid from "@/components/products/ProductGrid";
 
 export default function Products() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95]);
+
   return (
-    <>
+    <div ref={containerRef}>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#1A2332] via-[#2D3142] to-[#1A2332] text-white overflow-hidden">
+      <motion.section
+        style={{ opacity, scale }}
+        className="relative pt-32 pb-20 bg-alumil-dark text-white overflow-hidden"
+      >
         {/* Animated background pattern */}
         <motion.div
           animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
@@ -19,6 +31,32 @@ export default function Products() {
           }}
         />
 
+        {/* Floating orbs */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-alumil-yellow/20 blur-3xl"
+              style={{
+                width: Math.random() * 300 + 200,
+                height: Math.random() * 300 + 200,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                x: [0, Math.random() * 100 - 50],
+                y: [0, Math.random() * 100 - 50],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
+          ))}
+        </div>
+
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -30,14 +68,14 @@ export default function Products() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-block px-5 py-2 bg-[#C9A96E] text-[#1A2332] rounded-full text-sm font-semibold mb-6"
+              className="inline-block px-5 py-2 bg-alumil-yellow text-alumil-dark rounded-full text-sm font-semibold mb-6"
             >
               Our Products
             </motion.div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Our Premium Systems
               <br />
-              <span className="text-[#C9A96E]">Windows & Doors</span>
+              <span className="text-alumil-yellow">Windows & Doors</span>
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -50,9 +88,9 @@ export default function Products() {
             </motion.p>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <ProductGrid />
-    </>
+    </div>
   );
 }
