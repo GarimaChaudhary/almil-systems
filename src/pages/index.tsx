@@ -39,6 +39,18 @@ const products = [
     description: "Bespoke systems crafted for your vision",
     image: "/images/products/CUSTOMIZED SOLUTIONS.jpg",
   },
+  {
+    id: "facade",
+    name: "Facade Systems",
+    description: "High-performance building envelopes for modern architecture",
+    image: "/images/products/facade-1.png",
+  },
+  {
+    id: "railing",
+    name: "Railing Systems",
+    description: "Precision-engineered aluminium railing solutions for modern spaces",
+    image: "/images/products/railing-1.jpg",
+  },
 ];
 
 const features = [
@@ -73,7 +85,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section - Immersive & Elegant */}
-      <section className="relative h-screen flex items-center overflow-hidden bg-white">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
         {/* Background Image with Parallax & Zoom Effect */}
         <motion.div
           style={{ y: heroY, scale: 1.05 }}
@@ -92,21 +104,21 @@ export default function Home() {
         </motion.div>
 
         {/* Content */}
-        <div className="container mx-auto px-6 relative z-10 pt-28">
-          <div className="max-w-4xl">
+        <div className="container mx-auto px-6 relative z-10 pt-24 pb-12 lg:pt-32 lg:pb-20 flex flex-col justify-center min-h-screen">
+          <div className="max-w-4xl mt-auto mb-auto">
             {/* Badge - Minimalist */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-3 mb-6"
+              className="inline-flex items-center gap-3 mb-4 lg:mb-6"
             >
               <span className="w-12 h-[2px] bg-alumil-yellow"></span>
               <span className="text-white font-medium tracking-widest uppercase text-sm drop-shadow-md">Global Excellence, Now in India</span>
             </motion.div>
 
             {/* Heading - Clean & Impactful */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight text-white tracking-tight drop-shadow-lg">
+            <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-bold mb-4 lg:mb-6 leading-tight text-white tracking-tight drop-shadow-lg">
               <motion.span
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -130,7 +142,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-xl md:text-2xl text-white mb-10 leading-relaxed max-w-2xl font-light drop-shadow-md"
+              className="text-lg md:text-xl lg:text-2xl text-white mb-8 lg:mb-10 leading-relaxed max-w-2xl font-light drop-shadow-md"
             >
               US-engineered perfection. <strong className="font-semibold">30+ years</strong> of global legacy, introducing a new standard of luxury windows and doors to Indian architecture.
             </motion.p>
@@ -140,7 +152,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex flex-wrap gap-5 mb-16"
+              className="flex flex-wrap gap-4 lg:gap-5 mb-10 lg:mb-16"
             >
               <Link
                 href="/products"
@@ -162,7 +174,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 1 }}
-              className="flex items-center gap-12 md:gap-16 pt-8 border-t border-white/10"
+              className="flex flex-wrap items-center gap-8 md:gap-12 lg:gap-16 pt-6 lg:pt-8 border-t border-white/10"
             >
               {[
                 { value: "30+", label: "Years Global Legacy" },
@@ -170,8 +182,8 @@ export default function Home() {
                 { value: "100%", label: "US Engineered" },
               ].map((stat, idx) => (
                 <div key={idx}>
-                  <div className="text-3xl font-bold text-white mb-1 font-mono">{stat.value}</div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-1 font-mono">{stat.value}</div>
+                  <div className="text-[10px] lg:text-xs text-gray-400 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -493,7 +505,7 @@ export default function Home() {
               Ready to Transform Your Space?
             </h2>
             <p className="text-xl text-alumil-dark/80 mb-8 max-w-2xl mx-auto">
-              Get a free consultation and quote from our expert team in Jaipur
+              Get a free consultation and quote from our expert team in India
             </p>
             <div className="flex justify-center gap-4">
               <Link
@@ -503,10 +515,10 @@ export default function Home() {
                 Contact Us Now
               </Link>
               <a
-                href="tel:+919024268374"
+                href="tel:18008900154"
                 className="px-8 py-3 bg-white text-alumil-dark rounded font-bold hover:bg-alumil-dark hover:text-white transition-colors shadow-lg"
               >
-                +91 9024268374
+                1800-890-0154
               </a>
             </div>
           </motion.div>

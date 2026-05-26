@@ -45,6 +45,18 @@ const products = [
     tagline: "Bespoke systems crafted for you",
     image: "/images/products/CUSTOMIZED SOLUTIONS.jpg",
   },
+  {
+    id: "facade",
+    name: "Facade Systems",
+    tagline: "High-performance building envelopes for modern architecture",
+    image: "/images/products/facade-1.png",
+  },
+  {
+    id: "railing",
+    name: "Railing Systems",
+    tagline: "Precision-engineered aluminium railing solutions for modern spaces",
+    image: "/images/products/railing-1.jpg",
+  },
 ];
 
 export default function ProductGrid() {

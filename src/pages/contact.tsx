@@ -6,12 +6,12 @@ const contactInfo = [
   {
     icon: "📍",
     title: "Visit Us",
-    details: ["N 286, New Atish Market", "Jaipur, Rajasthan 302020", "India"],
+    details: ["P-108, Kharakua, Narsingh Chowk", "Vatika, Jaipur – 303905 (Rajasthan)", "India"],
   },
   {
     icon: "📞",
     title: "Call Us",
-    details: ["1800-890-0154", "+91 9024268374", "Mon-Sat: 10:00 AM - 7:00 PM", "Sunday: Closed"],
+    details: ["1800-890-0154", "Monday to Friday, 10:00 AM – 6:00 PM"],
   },
   {
     icon: "✉️",
@@ -451,7 +451,7 @@ export default function ContactUs() {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <motion.a
-                  href="tel:+919024268374"
+                  href="tel:18008900154"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-10 py-5 bg-alumil-yellow hover:opacity-90 text-alumil-dark rounded-md font-semibold text-lg transition-all duration-300"

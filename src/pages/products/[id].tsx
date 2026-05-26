@@ -176,6 +176,60 @@ const productData = {
 
     ],
   },
+  facade: {
+    name: "Facade Systems",
+    tagline: "High-performance building envelopes for modern architecture",
+    description:
+      "Our facade systems are designed to enhance building exteriors with strength, performance, and modern aesthetics. Engineered using precision aluminium profiles, they support large spans and contemporary elevations while ensuring durability and long-term reliability.\n\nWith clean lines, flexible design options, and seamless integration of glass and cladding materials, these systems improve natural light, weather protection, and overall building performance, making them ideal for modern commercial and institutional projects.",
+    technicalAdvantages: [
+      "Thermal Performance: Precision-engineered aluminium profiles with optimized system design help reduce heat transfer and support improved energy efficiency.",
+      "Structural Integrity: High-strength aluminium alloys provide stability for large-span and high-rise facades without deformation under load.",
+      "Design Flexibility: Compatible with glass, ACP, HPL, and other architectural cladding materials for diverse facade applications.",
+      "Corrosion Resistance: Powder-coated and anodized finishes enhance resistance against oxidation, moisture, and harsh environmental conditions.",
+    ],
+    specifications: [
+      "Profile options: Slimline and heavy-duty aluminium facade sections",
+      "Cladding compatibility: Glass, ACP, HPL, and other materials",
+      "Air tightness: Designed to comply with relevant Indian, ASTM, and EN standards",
+      "Water tightness: Engineered in accordance with applicable Indian, ASTM, and EN guidelines",
+      "Wind load resistance: System performance evaluated as per Indian, ASTM, and EN requirements",
+      "Finish options: Powder coated / anodized aluminium as per relevant Indian, ASTM, and EN standards",
+    ],
+    images: [
+      "/images/products/facade-1.png",
+      "/images/products/facade-2.png",
+      "/images/products/facade-3.png",
+      "/images/products/facade-4.png",
+    ],
+  },
+  railing: {
+    name: "Railing Systems",
+    tagline: "Precision-engineered aluminium railing solutions for modern architectural spaces",
+    description:
+      "Almil Railing Systems are designed to deliver superior safety, durability, and contemporary aesthetics for residential and commercial applications. Manufactured using high-quality aluminium profiles and compatible infill materials, these systems provide long-term structural stability while enhancing visual openness.\n\nWith slim sightlines, modular configurations, and seamless integration with glass and metal components, the railing systems ensure secure protection without compromising architectural elegance. Suitable for balconies, staircases, terraces, atriums, and open corridors, they support both functional performance and refined design.",
+    technicalAdvantages: [
+      "High-strength aluminium profiles for reliable load performance",
+      "Minimalistic design for modern architectural aesthetics",
+      "Compatibility with glass, aluminium, stainless steel, and custom infill materials",
+      "Corrosion-resistant powder-coated and anodized surface finishes",
+      "Flexible mounting options for diverse site conditions",
+      "Low maintenance with long service life",
+    ],
+    specifications: [
+      "System material: Precision-extruded aluminium profiles",
+      "Profile configurations: Slimline and heavy-duty railing sections",
+      "Infill options: Toughened glass, aluminium balusters, stainless steel, decorative panels",
+      "Mounting types: Top-mounted, side-mounted, floor-fixed systems",
+      "Safety compliance: Designed as per relevant Indian and international safety standards",
+      "Finish options: Powder coated and anodized aluminium finishes",
+    ],
+    images: [
+      "/images/products/railing-1.jpg",
+      "/images/products/railing-2.jpg",
+      "/images/products/railing-3.jpg",
+      "/images/products/railing-4.jpg",
+    ],
+  },
 };
 
 export default function ProductDetail() {
