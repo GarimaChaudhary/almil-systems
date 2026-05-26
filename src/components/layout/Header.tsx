@@ -64,7 +64,7 @@ export default function Header() {
               whileHover="hover"
             >
               <Image
-                src="/images/logo.jpg"
+                src="/images/logo.png"
                 alt="Almil Systems"
                 width={230}
                 height={70}
